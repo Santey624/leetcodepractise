@@ -56,4 +56,40 @@ class solution:
                 stack.append('[')
             elif s[i] == '{':
                 stack.append('{')
-            
+            elif s[i] == ')':
+                if len(stack) == 0:
+                    return False
+                else:
+                    if stack[-1] == '(':
+                        stack.pop()
+                    else:
+                        return False
+            elif s[i] == ']':
+                if len(stack) ==0:
+                    return False
+                else:
+                    if stack[-1] == '[':
+                        stack.pop()
+                    else:
+                        return False
+            elif s[i] == '}':
+                if len(stack) == 0:
+                    return False
+                else:
+                    if stack[-1] == '{':
+                        stack.pop()
+                    else:
+                        return False
+        if len(stack) == 0:
+            return True
+        else:
+            return False        
+        
+
+if __name__ == "__main__":
+    obj = solution()
+    finalresult = obj.isvalid("()[]{}")
+    print(finalresult)
+
+    
+        
