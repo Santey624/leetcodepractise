@@ -86,9 +86,10 @@ class solution:
             return False        
         
 
-obj = solution()
-finalresult = obj.isvalid("()[]{}")
-print(finalresult)
+if __name__ == "__main__":
+    obj = solution()
+    finalresult = obj.isvalid("()[]{}")
+    print(finalresult)
 
     
         
