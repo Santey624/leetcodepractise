@@ -36,4 +36,5 @@ if __name__ == "__main__":
 
 # But here is one thing to note
 # This is not the best way to solve this searching algorithm
+# In free time, we can try to solve this problem using binary search algorithm more efficiently
 
