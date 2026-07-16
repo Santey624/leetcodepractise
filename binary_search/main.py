@@ -24,15 +24,32 @@
 #Explanation: 2 does not exist in nums so return -1
 
 class solution:
+    # This solution is the solution for O(n) time complexity, which is not the best solution for the problem
     def binary_search(self, nums: list[int], target: int) -> int:
         for i in range(len(nums)):
             if nums[i] == target:
                 return i
         return -1
+    
+    # This solution is the solution for O(log(n)) time complexity, which is the best solution for the problem
+    def best_binary_search(self, nums: list[int], target: int) -> int:
+        low = 0
+        high = len(nums)-1
+
+        while low <= high:
+            middle = (low+high)//2
+            if nums[middle] == target:
+                return middle
+            elif nums[middle] > target:
+                high = middle -1
+            else:
+                low = middle + 1
+        return -1
+
 if __name__ == "__main__":
     a = solution()
-    print(a.binary_search([-1,0,3,5,9,12], 9))
-    print(a.binary_search([-1,0,3,5,9,12], 2))
+    print(a.best_binary_search([-1,0,3,5,9,12], 9))
+    print(a.best_binary_search([-1,0,3,5,9,12], 2))
 
 # But here is one thing to note
 # This is not the best way to solve this searching algorithm
